@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Current Version: 1.0.0
+# Current Version: 1.0.1
 
 ## How to get and use?
 # git clone "https://github.com/hezhijie0327/GFWList2PAC.git" && bash ./GFWList2PAC/release.sh
@@ -34,7 +34,7 @@ function GenerateHeaderInformation() {
     gfwlist2pac_homepage="https://github.com/hezhijie0327/GFWList2PAC"
     gfwlist2pac_timeupdated=$(date -d @$(echo "${gfwlist2pac_checksum}" | base64 -d) "+%Y-%m-%dT%H:%M:%S%:z")
     gfwlist2pac_title=$(if [ "${cnacc_gfwlist}" == "cnacc" ]; then echo "Zhijie's CNACCList"; elif [ "${cnacc_gfwlist}" == "gfwlist" ]; then echo "Zhijie's GFWList"; else exit 1; fi)
-    gfwlist2pac_version=$(cat ../release.sh | grep "Current\ Version" | sed "s/\#\ Current\ Version\:\ //g")-$(date -d @$(echo "${gfwlist2pac_checksum}" | base64 -d) "+%Y%m%d")-$((10#$(date -d @$(echo "${gfwlist2pac_checksum}" | base64 -d) "+%H") / 3))
+    gfwlist2pac_version=$(curl -s --connect-timeout 15 "https://raw.githubusercontent.com/hezhijie0327/GFWList2PAC/source/release.sh" | grep "Current\ Version" | sed "s/\#\ Current\ Version\:\ //g")-$(date -d @$(echo "${gfwlist2pac_checksum}" | base64 -d) "+%Y%m%d")-$((10#$(date -d @$(echo "${gfwlist2pac_checksum}" | base64 -d) "+%H") / 3))
     function gfwlist2pac_autoproxy() {
         echo "[AutoProxy 0.2.9]" > ../gfwlist2pac_${cnacc_gfwlist}_autoproxy.txt
         echo "! Checksum: ${gfwlist2pac_checksum}" >> ../gfwlist2pac_${cnacc_gfwlist}_autoproxy.txt
