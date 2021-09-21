@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Current Version: 1.0.1
+# Current Version: 1.0.2
 
 ## How to get and use?
 # git clone "https://github.com/hezhijie0327/GFWList2PAC.git" && bash ./GFWList2PAC/release.sh
@@ -123,6 +123,7 @@ function OutputData() {
         echo "DOMAIN-SUFFIX,${cnacc_data[cnacc_data_task]},DIRECT" >> ../gfwlist2pac_${cnacc_gfwlist}_shadowrocket.conf
         echo "DOMAIN-SUFFIX,${cnacc_data[cnacc_data_task]}" >> ../gfwlist2pac_${cnacc_gfwlist}_surge.yaml
         echo "DOMAIN-SUFFIX,${cnacc_data[cnacc_data_task]},DIRECT" >> ../gfwlist2pac_${cnacc_gfwlist}_quantumult.yaml
+        echo "domain(domain:${cnacc_data[cnacc_data_task]}) -> direct" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
         echo "domain:${cnacc_data[cnacc_data_task]}," >> ../gfwlist2pac_${cnacc_gfwlist}_v2rayn.txt
     done
     GenerateFooterInformation && EncodeData
@@ -133,6 +134,7 @@ function OutputData() {
         echo "DOMAIN-SUFFIX,${gfwlist_data[gfwlist_data_task]},Proxy" >> ../gfwlist2pac_${cnacc_gfwlist}_shadowrocket.conf
         echo "DOMAIN-SUFFIX,${gfwlist_data[gfwlist_data_task]}" >> ../gfwlist2pac_${cnacc_gfwlist}_surge.yaml
         echo "DOMAIN-SUFFIX,${gfwlist_data[gfwlist_data_task]},PROXY" >> ../gfwlist2pac_${cnacc_gfwlist}_quantumult.yaml
+        echo "domain(domain:${gfwlist_data[gfwlist_data_task]}) -> proxy" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
         echo "domain:${gfwlist_data[gfwlist_data_task]}," >> ../gfwlist2pac_${cnacc_gfwlist}_v2rayn.txt
     done
     GenerateFooterInformation && EncodeData
