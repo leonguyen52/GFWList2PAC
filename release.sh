@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Current Version: 1.0.3
+# Current Version: 1.0.4
 
 ## How to get and use?
 # git clone "https://github.com/hezhijie0327/GFWList2PAC.git" && bash ./GFWList2PAC/release.sh
@@ -91,6 +91,7 @@ function GenerateHeaderInformation() {
         echo "# TimeUpdated: ${gfwlist2pac_timeupdated}" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
         echo "# Expires: ${gfwlist2pac_expires}" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
         echo "# Homepage: ${gfwlist2pac_homepage}" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
+        echo "domain(" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
     }
     function gfwlist2pac_v2rayn() {
         echo "# Checksum: ${gfwlist2pac_checksum}" > ../gfwlist2pac_${cnacc_gfwlist}_v2rayn.txt
@@ -113,6 +114,19 @@ function GenerateFooterInformation() {
     function gfwlist2pac_shadowrocket() {
         echo "FINAL,DIRECT" >> ../gfwlist2pac_${cnacc_gfwlist}_shadowrocket.conf
     }
+    function gfwlist2pac_v2raya_cnacc() {
+        echo -n ")->direct" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.conf
+        sed -i 's/,)/)/g' "../gfwlist2pac_${cnacc_gfwlist}_v2raya.conf"
+    }
+    function gfwlist2pac_v2raya_gfwlist() {
+        echo -n ")->proxy" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.conf
+        sed -i 's/,)/)/g' "../gfwlist2pac_${cnacc_gfwlist}_v2raya.conf"
+    }
+    if [ "${cnacc_gfwlist}" == "cnacc" ]; then
+        gfwlist2pac_v2raya_cnacc
+    else
+        gfwlist2pac_v2raya_gfwlist
+    fi
     gfwlist2pac_shadowrocket
 }
 # Encode Data
@@ -132,7 +146,7 @@ function OutputData() {
         echo "DOMAIN-SUFFIX,${cnacc_data[cnacc_data_task]},DIRECT" >> ../gfwlist2pac_${cnacc_gfwlist}_shadowrocket.conf
         echo "DOMAIN-SUFFIX,${cnacc_data[cnacc_data_task]}" >> ../gfwlist2pac_${cnacc_gfwlist}_surge.yaml
         echo "DOMAIN-SUFFIX,${cnacc_data[cnacc_data_task]},DIRECT" >> ../gfwlist2pac_${cnacc_gfwlist}_quantumult.yaml
-        echo "domain(domain:${cnacc_data[cnacc_data_task]}) -> direct" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
+        echo -n "domain:${cnacc_data[cnacc_data_task]}," >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
         echo "domain:${cnacc_data[cnacc_data_task]}," >> ../gfwlist2pac_${cnacc_gfwlist}_v2rayn.txt
     done
     GenerateFooterInformation && EncodeData
@@ -143,7 +157,7 @@ function OutputData() {
         echo "DOMAIN-SUFFIX,${gfwlist_data[gfwlist_data_task]},Proxy" >> ../gfwlist2pac_${cnacc_gfwlist}_shadowrocket.conf
         echo "DOMAIN-SUFFIX,${gfwlist_data[gfwlist_data_task]}" >> ../gfwlist2pac_${cnacc_gfwlist}_surge.yaml
         echo "DOMAIN-SUFFIX,${gfwlist_data[gfwlist_data_task]},PROXY" >> ../gfwlist2pac_${cnacc_gfwlist}_quantumult.yaml
-        echo "domain(domain:${gfwlist_data[gfwlist_data_task]}) -> proxy" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
+        echo -n "domain:${gfwlist_data[gfwlist_data_task]}," >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
         echo "domain:${gfwlist_data[gfwlist_data_task]}," >> ../gfwlist2pac_${cnacc_gfwlist}_v2rayn.txt
     done
     GenerateFooterInformation && EncodeData
