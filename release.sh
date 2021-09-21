@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Current Version: 1.0.2
+# Current Version: 1.0.3
 
 ## How to get and use?
 # git clone "https://github.com/hezhijie0327/GFWList2PAC.git" && bash ./GFWList2PAC/release.sh
@@ -84,6 +84,14 @@ function GenerateHeaderInformation() {
         echo "# Expires: ${gfwlist2pac_expires}" >> ../gfwlist2pac_${cnacc_gfwlist}_quantumult.yaml
         echo "# Homepage: ${gfwlist2pac_homepage}" >> ../gfwlist2pac_${cnacc_gfwlist}_quantumult.yaml
     }
+    function gfwlist2pac_v2raya() {
+        echo "# Checksum: ${gfwlist2pac_checksum}" > ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
+        echo "# Title: ${gfwlist2pac_title} for v2rayA" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
+        echo "# Version: ${gfwlist2pac_version}" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
+        echo "# TimeUpdated: ${gfwlist2pac_timeupdated}" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
+        echo "# Expires: ${gfwlist2pac_expires}" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
+        echo "# Homepage: ${gfwlist2pac_homepage}" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
+    }
     function gfwlist2pac_v2rayn() {
         echo "# Checksum: ${gfwlist2pac_checksum}" > ../gfwlist2pac_${cnacc_gfwlist}_v2rayn.txt
         echo "# Title: ${gfwlist2pac_title} for v2rayN" >> ../gfwlist2pac_${cnacc_gfwlist}_v2rayn.txt
@@ -97,6 +105,7 @@ function GenerateHeaderInformation() {
     gfwlist2pac_shadowrocket
     gfwlist2pac_surge
     gfwlist2pac_quantumult
+    gfwlist2pac_v2raya
     gfwlist2pac_v2rayn
 }
 # Generate Footer Information
