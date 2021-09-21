@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Current Version: 1.0.4
+# Current Version: 1.0.5
 
 ## How to get and use?
 # git clone "https://github.com/hezhijie0327/GFWList2PAC.git" && bash ./GFWList2PAC/release.sh
@@ -91,7 +91,7 @@ function GenerateHeaderInformation() {
         echo "# TimeUpdated: ${gfwlist2pac_timeupdated}" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
         echo "# Expires: ${gfwlist2pac_expires}" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
         echo "# Homepage: ${gfwlist2pac_homepage}" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
-        echo "domain(" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
+        echo -n "domain(" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
     }
     function gfwlist2pac_v2rayn() {
         echo "# Checksum: ${gfwlist2pac_checksum}" > ../gfwlist2pac_${cnacc_gfwlist}_v2rayn.txt
@@ -114,20 +114,16 @@ function GenerateFooterInformation() {
     function gfwlist2pac_shadowrocket() {
         echo "FINAL,DIRECT" >> ../gfwlist2pac_${cnacc_gfwlist}_shadowrocket.conf
     }
-    function gfwlist2pac_v2raya_cnacc() {
-        echo -n ")->direct" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.conf
-        sed -i 's/,)/)/g' "../gfwlist2pac_${cnacc_gfwlist}_v2raya.conf"
+    function gfwlist2pac_v2raya() {
+        if [ "${cnacc_gfwlist}" == "cnacc" ]; then
+            echo -n ")->direct" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
+        else
+            echo -n ")->proxy" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
+        fi
+        sed -i 's/,)/)/g' "../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt"
     }
-    function gfwlist2pac_v2raya_gfwlist() {
-        echo -n ")->proxy" >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.conf
-        sed -i 's/,)/)/g' "../gfwlist2pac_${cnacc_gfwlist}_v2raya.conf"
-    }
-    if [ "${cnacc_gfwlist}" == "cnacc" ]; then
-        gfwlist2pac_v2raya_cnacc
-    else
-        gfwlist2pac_v2raya_gfwlist
-    fi
     gfwlist2pac_shadowrocket
+    gfwlist2pac_v2raya
 }
 # Encode Data
 function EncodeData() {
