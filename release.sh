@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Current Version: 1.0.5
+# Current Version: 1.0.6
 
 ## How to get and use?
 # git clone "https://github.com/hezhijie0327/GFWList2PAC.git" && bash ./GFWList2PAC/release.sh
@@ -53,6 +53,15 @@ function GenerateHeaderInformation() {
         echo "# Expires: ${gfwlist2pac_expires}" >> ../gfwlist2pac_${cnacc_gfwlist}_clash.yaml
         echo "# Homepage: ${gfwlist2pac_homepage}" >> ../gfwlist2pac_${cnacc_gfwlist}_clash.yaml
     }
+    function gfwlist2pac_clash_premium() {
+        echo "payload:" > ../gfwlist2pac_${cnacc_gfwlist}_clash_premium.yaml
+        echo "# Checksum: ${gfwlist2pac_checksum}" >> ../gfwlist2pac_${cnacc_gfwlist}_clash_premium.yaml
+        echo "# Title: ${gfwlist2pac_title} for Clash Premium" >> ../gfwlist2pac_${cnacc_gfwlist}_clash_premium.yaml
+        echo "# Version: ${gfwlist2pac_version}" >> ../gfwlist2pac_${cnacc_gfwlist}_clash_premium.yaml
+        echo "# TimeUpdated: ${gfwlist2pac_timeupdated}" >> ../gfwlist2pac_${cnacc_gfwlist}_clash_premium.yaml
+        echo "# Expires: ${gfwlist2pac_expires}" >> ../gfwlist2pac_${cnacc_gfwlist}_clash_premium.yaml
+        echo "# Homepage: ${gfwlist2pac_homepage}" >> ../gfwlist2pac_${cnacc_gfwlist}_clash_premium.yaml
+    }
     function gfwlist2pac_shadowrocket() {
         echo "# Checksum: ${gfwlist2pac_checksum}" > ../gfwlist2pac_${cnacc_gfwlist}_shadowrocket.conf
         echo "# Title: ${gfwlist2pac_title} for Shadowrocket" >> ../gfwlist2pac_${cnacc_gfwlist}_shadowrocket.conf
@@ -103,6 +112,7 @@ function GenerateHeaderInformation() {
     }
     gfwlist2pac_autoproxy
     gfwlist2pac_clash
+    gfwlist2pac_clash_premium
     gfwlist2pac_shadowrocket
     gfwlist2pac_surge
     gfwlist2pac_quantumult
@@ -139,8 +149,9 @@ function OutputData() {
     for cnacc_data_task in "${!cnacc_data[@]}"; do
         echo "@@||${cnacc_data[cnacc_data_task]}^" >> ../gfwlist2pac_${cnacc_gfwlist}_autoproxy.txt
         echo "  - DOMAIN-SUFFIX,${cnacc_data[cnacc_data_task]}" >> ../gfwlist2pac_${cnacc_gfwlist}_clash.yaml
+        echo "  - '${cnacc_data[cnacc_data_task]}'" >> ../gfwlist2pac_${cnacc_gfwlist}_clash_premium.yaml
         echo "DOMAIN-SUFFIX,${cnacc_data[cnacc_data_task]},DIRECT" >> ../gfwlist2pac_${cnacc_gfwlist}_shadowrocket.conf
-        echo "DOMAIN-SUFFIX,${cnacc_data[cnacc_data_task]}" >> ../gfwlist2pac_${cnacc_gfwlist}_surge.yaml
+        echo "DOMAIN-SUFFIX,${cnacc_data[cnacc_data_task]},DIRECT" >> ../gfwlist2pac_${cnacc_gfwlist}_surge.yaml
         echo "DOMAIN-SUFFIX,${cnacc_data[cnacc_data_task]},DIRECT" >> ../gfwlist2pac_${cnacc_gfwlist}_quantumult.yaml
         echo -n "domain:${cnacc_data[cnacc_data_task]}," >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
         echo "domain:${cnacc_data[cnacc_data_task]}," >> ../gfwlist2pac_${cnacc_gfwlist}_v2rayn.txt
@@ -150,8 +161,9 @@ function OutputData() {
     for gfwlist_data_task in "${!gfwlist_data[@]}"; do
         echo "||${gfwlist_data[gfwlist_data_task]}^" >> ../gfwlist2pac_${cnacc_gfwlist}_autoproxy.txt
         echo "  - DOMAIN-SUFFIX,${gfwlist_data[gfwlist_data_task]}" >> ../gfwlist2pac_${cnacc_gfwlist}_clash.yaml
-        echo "DOMAIN-SUFFIX,${gfwlist_data[gfwlist_data_task]},Proxy" >> ../gfwlist2pac_${cnacc_gfwlist}_shadowrocket.conf
-        echo "DOMAIN-SUFFIX,${gfwlist_data[gfwlist_data_task]}" >> ../gfwlist2pac_${cnacc_gfwlist}_surge.yaml
+        echo "  - '${gfwlist_data[gfwlist_data_task]}'" >> ../gfwlist2pac_${cnacc_gfwlist}_clash_premium.yaml
+        echo "DOMAIN-SUFFIX,${gfwlist_data[gfwlist_data_task]},PROXY" >> ../gfwlist2pac_${cnacc_gfwlist}_shadowrocket.conf
+        echo "DOMAIN-SUFFIX,${gfwlist_data[gfwlist_data_task]},PROXY" >> ../gfwlist2pac_${cnacc_gfwlist}_surge.yaml
         echo "DOMAIN-SUFFIX,${gfwlist_data[gfwlist_data_task]},PROXY" >> ../gfwlist2pac_${cnacc_gfwlist}_quantumult.yaml
         echo -n "domain:${gfwlist_data[gfwlist_data_task]}," >> ../gfwlist2pac_${cnacc_gfwlist}_v2raya.txt
         echo "domain:${gfwlist_data[gfwlist_data_task]}," >> ../gfwlist2pac_${cnacc_gfwlist}_v2rayn.txt
