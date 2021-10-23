@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Current Version: 1.0.7
+# Current Version: 1.0.8
 
 ## How to get and use?
 # git clone "https://github.com/hezhijie0327/GFWList2PAC.git" && bash ./GFWList2PAC/release.sh
@@ -149,7 +149,7 @@ function OutputData() {
     for cnacc_data_task in "${!cnacc_data[@]}"; do
         echo "@@||${cnacc_data[cnacc_data_task]}^" >> ../gfwlist2pac_${cnacc_gfwlist}_autoproxy.txt
         echo "  - DOMAIN-SUFFIX,${cnacc_data[cnacc_data_task]}" >> ../gfwlist2pac_${cnacc_gfwlist}_clash.yaml
-        echo "  - '.${cnacc_data[cnacc_data_task]}'" >> ../gfwlist2pac_${cnacc_gfwlist}_clash_premium.yaml
+        echo "  - '+.${cnacc_data[cnacc_data_task]}'" >> ../gfwlist2pac_${cnacc_gfwlist}_clash_premium.yaml
         echo "DOMAIN-SUFFIX,${cnacc_data[cnacc_data_task]},DIRECT" >> ../gfwlist2pac_${cnacc_gfwlist}_shadowrocket.conf
         echo "DOMAIN-SUFFIX,${cnacc_data[cnacc_data_task]},DIRECT" >> ../gfwlist2pac_${cnacc_gfwlist}_surge.yaml
         echo "DOMAIN-SUFFIX,${cnacc_data[cnacc_data_task]},DIRECT" >> ../gfwlist2pac_${cnacc_gfwlist}_quantumult.yaml
@@ -161,7 +161,7 @@ function OutputData() {
     for gfwlist_data_task in "${!gfwlist_data[@]}"; do
         echo "||${gfwlist_data[gfwlist_data_task]}^" >> ../gfwlist2pac_${cnacc_gfwlist}_autoproxy.txt
         echo "  - DOMAIN-SUFFIX,${gfwlist_data[gfwlist_data_task]}" >> ../gfwlist2pac_${cnacc_gfwlist}_clash.yaml
-        echo "  - '.${gfwlist_data[gfwlist_data_task]}'" >> ../gfwlist2pac_${cnacc_gfwlist}_clash_premium.yaml
+        echo "  - '+.${gfwlist_data[gfwlist_data_task]}'" >> ../gfwlist2pac_${cnacc_gfwlist}_clash_premium.yaml
         echo "DOMAIN-SUFFIX,${gfwlist_data[gfwlist_data_task]},PROXY" >> ../gfwlist2pac_${cnacc_gfwlist}_shadowrocket.conf
         echo "DOMAIN-SUFFIX,${gfwlist_data[gfwlist_data_task]},PROXY" >> ../gfwlist2pac_${cnacc_gfwlist}_surge.yaml
         echo "DOMAIN-SUFFIX,${gfwlist_data[gfwlist_data_task]},PROXY" >> ../gfwlist2pac_${cnacc_gfwlist}_quantumult.yaml
