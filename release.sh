@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Current Version: 1.0.8
+# Current Version: 1.0.9
 
 ## How to get and use?
 # git clone "https://github.com/hezhijie0327/GFWList2PAC.git" && bash ./GFWList2PAC/release.sh
@@ -9,10 +9,10 @@
 # Get Data
 function GetData() {
     cnacc_domain=(
-        "https://raw.githubusercontent.com/hezhijie0327/GFWList2AGH/main/gfwlist2adguardhome/whitelist_full.txt"
+        "https://raw.githubusercontent.com/hezhijie0327/GFWList2AGH/main/gfwlist2domain/whitelist_full.txt"
     )
     gfwlist_domain=(
-        "https://raw.githubusercontent.com/hezhijie0327/GFWList2AGH/main/gfwlist2adguardhome/blacklist_full.txt"
+        "https://raw.githubusercontent.com/hezhijie0327/GFWList2AGH/main/gfwlist2domain/blacklist_full.txt"
     )
     rm -rf ./gfwlist2pac_* ./Temp && mkdir ./Temp && cd ./Temp
     for cnacc_domain_task in "${!cnacc_domain[@]}"; do
@@ -24,8 +24,8 @@ function GetData() {
 }
 # Analyse Data
 function AnalyseData() {
-    cnacc_data=($(cat ./cnacc_domain.tmp | grep "\/\]https\:\/\/doh\.pub\:443\/dns\-query\|\/\]tls\:\/\/dns\.alidns\.com\:853" | sed "s/https\:\/\/doh\.pub\:443\/dns\-query//g;s/tls\:\/\/dns\.alidns\.com\:853//g;s/\[\///g;s/\/\]//g;s/\//\n/g" | sort | uniq | awk "{ print $2 }"))
-    gfwlist_data=($(cat ./gfwlist_domain.tmp | grep "\/\]https\:\/\/doh\.opendns\.com\:443\/dns\-query\|\/\]tls\:\/\/dns\.google\:853" | sed "s/https\:\/\/doh\.opendns\.com\:443\/dns\-query//g;s/tls\:\/\/dns\.google\:853//g;s/\[\///g;s/\/\]//g;s/\//\n/g" | sort | uniq | awk "{ print $2 }"))
+    cnacc_data=($(cat ./cnacc_domain.tmp | awk "{ print $2 }"))
+    gfwlist_data=($(cat ./gfwlist_domain.tmp | awk "{ print $2 }"))
 }
 # Generate Header Information
 function GenerateHeaderInformation() {
