@@ -1,7 +1,7 @@
-# Checksum: MTcyMDU3NTI0NAo=
+# Checksum: MTcyMDY2MTY1NAo=
 # Title: Zhijie's GFWList for v2rayN
-# Version: 1.0.9-20240710-0
-# TimeUpdated: 2024-07-10T01:34:04+00:00
+# Version: 1.0.9-20240711-0
+# TimeUpdated: 2024-07-11T01:34:14+00:00
 # Expires: 3 hours (update frequency)
 # Homepage: https://github.com/hezhijie0327/GFWList2PAC
 domain:000webhost.com,
@@ -14566,6 +14566,7 @@ domain:maturewifeporn.cc,
 domain:maturewomenanal.com,
 domain:maturexxxvideos.cc,
 domain:maven.org,
+domain:max.com,
 domain:maxgo.com,
 domain:maxillofacial-cadcam.com,
 domain:maximumerotica.com,
