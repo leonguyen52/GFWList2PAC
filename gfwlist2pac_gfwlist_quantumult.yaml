@@ -1,7 +1,7 @@
-# Checksum: MTcyMjczNTY3MAo=
+# Checksum: MTcyMjgyMTg2Mgo=
 # Title: Zhijie's GFWList for Quantumult
-# Version: 1.0.9-20240804-0
-# TimeUpdated: 2024-08-04T01:41:10+00:00
+# Version: 1.0.9-20240805-0
+# TimeUpdated: 2024-08-05T01:37:42+00:00
 # Expires: 3 hours (update frequency)
 # Homepage: https://github.com/hezhijie0327/GFWList2PAC
 DOMAIN-SUFFIX,000webhost.com,PROXY
@@ -22182,6 +22182,7 @@ DOMAIN-SUFFIX,tibetsupportgroup.org,PROXY
 DOMAIN-SUFFIX,tibetswiss.ch,PROXY
 DOMAIN-SUFFIX,tibettelegraph.com,PROXY
 DOMAIN-SUFFIX,tibettimes.net,PROXY
+DOMAIN-SUFFIX,tibettruth.com,PROXY
 DOMAIN-SUFFIX,tibetwrites.org,PROXY
 DOMAIN-SUFFIX,tiburon.com,PROXY
 DOMAIN-SUFFIX,tickdata.com,PROXY
