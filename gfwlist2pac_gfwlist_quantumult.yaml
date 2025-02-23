@@ -1,7 +1,7 @@
-# Checksum: MTc0MDE4ODY3Nwo=
+# Checksum: MTc0MDI3NTY0OQo=
 # Title: Zhijie's GFWList for Quantumult
-# Version: 1.0.9-20250222-0
-# TimeUpdated: 2025-02-22T01:44:37+00:00
+# Version: 1.0.9-20250223-0
+# TimeUpdated: 2025-02-23T01:54:09+00:00
 # Expires: 3 hours (update frequency)
 # Homepage: https://github.com/hezhijie0327/GFWList2PAC
 DOMAIN-SUFFIX,000webhost.com,PROXY
@@ -6814,6 +6814,7 @@ DOMAIN-SUFFIX,cods-nursing.ac.uk,PROXY
 DOMAIN-SUFFIX,coedcherry.com,PROXY
 DOMAIN-SUFFIX,coem.ac.uk,PROXY
 DOMAIN-SUFFIX,cof.ac.uk,PROXY
+DOMAIN-SUFFIX,cofacts.tw,PROXY
 DOMAIN-SUFFIX,cogc.ac.uk,PROXY
 DOMAIN-SUFFIX,coin2co.in,PROXY
 DOMAIN-SUFFIX,coinalyze.net,PROXY
