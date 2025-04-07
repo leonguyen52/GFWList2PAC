@@ -1,8 +1,8 @@
 payload:
-# Checksum: MTc0MzkwNDkxNAo=
+# Checksum: MTc0Mzk5MTE1Ngo=
 # Title: Zhijie's GFWList for Clash
-# Version: 1.0.9-20250406-0
-# TimeUpdated: 2025-04-06T02:01:54+00:00
+# Version: 1.0.9-20250407-0
+# TimeUpdated: 2025-04-07T01:59:16+00:00
 # Expires: 3 hours (update frequency)
 # Homepage: https://github.com/hezhijie0327/GFWList2PAC
   - DOMAIN-SUFFIX,000webhost.com
