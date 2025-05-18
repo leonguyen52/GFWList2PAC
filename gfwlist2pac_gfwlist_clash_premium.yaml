@@ -1,8 +1,8 @@
 payload:
-# Checksum: MTc0NzM2MTA2MAo=
+# Checksum: MTc0NzUzNDIzMwo=
 # Title: Zhijie's GFWList for Clash Premium
-# Version: 1.0.9-20250516-0
-# TimeUpdated: 2025-05-16T02:04:20+00:00
+# Version: 1.0.9-20250518-0
+# TimeUpdated: 2025-05-18T02:10:33+00:00
 # Expires: 3 hours (update frequency)
 # Homepage: https://github.com/hezhijie0327/GFWList2PAC
   - '+.000webhost.com'
@@ -3313,6 +3313,7 @@ payload:
   - '+.bbs.mikocon.com'
   - '+.bbs.morbell.com'
   - '+.bbs.mychat.to'
+  - '+.bbs.naixi.net'
   - '+.bbs.netbig.com'
   - '+.bbs.nyinfor.com'
   - '+.bbs.ozchinese.com'
@@ -16845,6 +16846,7 @@ payload:
   - '+.lcwc.ac.uk'
   - '+.ld.hao123img.com'
   - '+.ldoc-cdt.ac.uk'
+  - '+.ldplayer.tw'
   - '+.le-direct.tv'
   - '+.le-vpn.com'
   - '+.le.ac.uk'
