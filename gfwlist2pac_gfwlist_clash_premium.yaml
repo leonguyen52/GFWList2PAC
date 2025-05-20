@@ -1,8 +1,8 @@
 payload:
-# Checksum: MTc0NzYyMDU0OAo=
+# Checksum: MTc0NzcwNjY5NAo=
 # Title: Zhijie's GFWList for Clash Premium
-# Version: 1.0.9-20250519-0
-# TimeUpdated: 2025-05-19T02:09:08+00:00
+# Version: 1.0.9-20250520-0
+# TimeUpdated: 2025-05-20T02:04:54+00:00
 # Expires: 3 hours (update frequency)
 # Homepage: https://github.com/hezhijie0327/GFWList2PAC
   - '+.000webhost.com'
@@ -19394,6 +19394,7 @@ payload:
   - '+.msft.info'
   - '+.msft.net'
   - '+.msftauth.net'
+  - '+.msftauthimages.net'
   - '+.msftconnecttest.com'
   - '+.msfteducation.ca'
   - '+.msftncsi.com'
