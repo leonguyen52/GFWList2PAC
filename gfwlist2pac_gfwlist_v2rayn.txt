@@ -1,7 +1,7 @@
-# Checksum: MTc0OTY5Mzk3Mwo=
+# Checksum: MTc0OTc4MDQ2NAo=
 # Title: Zhijie's GFWList for v2rayN
-# Version: 1.0.9-20250612-0
-# TimeUpdated: 2025-06-12T02:06:13+00:00
+# Version: 1.0.9-20250613-0
+# TimeUpdated: 2025-06-13T02:07:44+00:00
 # Expires: 3 hours (update frequency)
 # Homepage: https://github.com/hezhijie0327/GFWList2PAC
 domain:000webhost.com,
@@ -7331,6 +7331,7 @@ domain:cpj.org,
 domain:cppe.ac.uk,
 domain:cppr.ac.uk,
 domain:cptt.ac.uk,
+domain:cpu-monkey.com,
 domain:cpz.to,
 domain:cq99.us,
 domain:cqcorea.com,
