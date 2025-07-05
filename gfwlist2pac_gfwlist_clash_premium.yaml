@@ -1,8 +1,8 @@
 payload:
-# Checksum: MTc1MTU5NDg5MAo=
+# Checksum: MTc1MTY4MTA0Ngo=
 # Title: Zhijie's GFWList for Clash Premium
-# Version: 1.0.9-20250704-0
-# TimeUpdated: 2025-07-04T02:08:10+00:00
+# Version: 1.0.9-20250705-0
+# TimeUpdated: 2025-07-05T02:04:06+00:00
 # Expires: 3 hours (update frequency)
 # Homepage: https://github.com/hezhijie0327/GFWList2PAC
   - '+.000webhost.com'
@@ -2930,6 +2930,7 @@ payload:
   - '+.avinin.com'
   - '+.avizoon.site'
   - '+.avizoone.com'
+  - '+.avjb.com'
   - '+.avjiasu.com'
   - '+.avjoy.me'
   - '+.avjzy67.xyz'
