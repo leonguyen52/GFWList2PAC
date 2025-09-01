@@ -1,7 +1,7 @@
-# Checksum: MTc1NjYwNTc4MQo=
+# Checksum: MTc1NjY5MzE2OQo=
 # Title: Zhijie's GFWList for Surge
-# Version: 1.0.9-20250831-0
-# TimeUpdated: 2025-08-31T02:03:01+00:00
+# Version: 1.0.9-20250901-0
+# TimeUpdated: 2025-09-01T02:19:29+00:00
 # Expires: 3 hours (update frequency)
 # Homepage: https://github.com/hezhijie0327/GFWList2PAC
 DOMAIN-SUFFIX,000webhost.com,PROXY
